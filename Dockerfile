@@ -10,4 +10,6 @@ COPY --from=mwader/static-ffmpeg:7.0 /ffprobe /bin/ffprobe
 COPY . .
 RUN pip3 install -r requirements.txt
 EXPOSE 8080
+
+RUN sed -i 's/flask run/flask run --host=0.0.0.0 --port=8080/g' run.sh
 CMD ["bash","run.sh"]
