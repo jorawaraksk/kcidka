@@ -9,4 +9,5 @@ COPY --from=mwader/static-ffmpeg:7.0 /ffprobe /bin/ffprobe
 
 COPY . .
 RUN pip3 install -r requirements.txt
+EXPOSE 10000
 CMD ["bash","run.sh"]
