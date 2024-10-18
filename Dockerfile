@@ -12,4 +12,4 @@ RUN pip3 install -r requirements.txt
 EXPOSE 8080
 
 RUN sed -i 's/flask run/flask run --host=0.0.0.0 --port=8080/g' run.sh
-CMD ["python3", "-m", "bot"]
+CMD ["bash","run.sh"]
